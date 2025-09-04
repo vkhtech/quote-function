@@ -41,3 +41,17 @@ dependencyManagement {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+tasks.named('bootBuildImage') {
+    builder = 'docker.io/paketobuildpacks/builder-jammy-tiny'
+    environment = ['BP_NATIVE_IMAGE': 'true']
+    imageName = "${project.name}"
+
+    docker {
+        publishRegistry {
+            username = project.findProperty("registryUsername")
+            password = project.findProperty("registryToken")
+            url = project.findProperty("registryUrl")
+        }
+    }
+}
