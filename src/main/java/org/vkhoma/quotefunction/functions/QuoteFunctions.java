@@ -47,8 +47,9 @@ public class QuoteFunctions {
 	}
 
 	@Bean
-	Consumer<Quote> logQuote() {
-		return quote -> log.info("Quote: '{}' by {}", quote.content(), quote.author());
+	Consumer<Flux<Quote>> logQuote() {
+		return flux -> flux.subscribe(
+                quote -> log.info("Quote: '{}' by {}", quote.content(), quote.author()));
 	}
 
 }
