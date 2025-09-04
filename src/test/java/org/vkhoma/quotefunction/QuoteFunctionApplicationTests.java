@@ -1,4 +1,4 @@
-package org.vkhoma.quote_function;
+package org.vkhoma.quotefunction;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package org.vkhoma.quote_function;
+package org.vkhoma.quotefunction;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
